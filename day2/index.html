@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Page</title>
+    <link rel="stylesheet" href="common.css" />
+  </head>
+
+  <body>
+    <div id="links">
+      <div><a href="index.html">Home</a></div>
+      <div id="men"><a href="mens.html">MENS</a></div>
+      <div id="wommen"><a href="wommens.html">WOMMENS</a></div>
+    </div>
+  
+  </body>
+  <script>
+    //you need to code here
+    document.querySelector("#men").addEventListener("click",menspage)
+    var jobarr=JSON.parse(localStorage.getItem("joblist"))||[]
+    function jobsubmit(){
+      event.preventDefault()
+      var jobobj={
+        personName:form.name.value,
+        personEmail:form.email.value,
+        personRole:form.role.value,
+        personSalary:form.salary.value
+
+      }
+      jobarr.push(jobobj)
+      localStorage.setItem("joblist",JSON.stringify(jobarr))
+     window.location.href="applied.html"
+    }
+
+    
+  </script>
+</html>
